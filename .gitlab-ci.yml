@@ -7,7 +7,7 @@ run-sast-job:
     script: |
       apt-get update
       apt-get -y install curl jq
-      mvn verify package sonar:sonar -Dsonar.host.url=https://sonarcloud.io/ -Dsonar.organization=gitlabdevsecopsintegrtion -Dsonar.projectKey=gitLabdevsecopsintegration -Dsonar.login=14ad4797c02810a818f21384add02744d3f9e34d
+      mvn verify package sonar:sonar -Dsonar.host.url=https://sonarcloud.io/ -Dsonar.organization=gitlabdevsecopsintegrtion -Dsonar.projectKey=gitLabdevsecopsintegration -Dsonar.token=14ad4797c02810a818f21384add02744d3f9e34d
       sleep 5 
       quality_status=$(curl -s -u 14ad4797c02810a818f21384add02744d3f9e34d: https://sonarcloud.io/api/qualitygates/project_status?projectKey=gitLabdevsecopsintegration | jq -r '.projectStatus.status')
       echo "SonarCloud Analysis Status is $quality_status"; 
