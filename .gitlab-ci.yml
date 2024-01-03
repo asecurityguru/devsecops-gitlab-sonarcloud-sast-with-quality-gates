@@ -3,7 +3,7 @@ stages:
 
 run-sast-job:
     stage: runSAST
-    image: maven:3.8.5-openjdk-11-slim
+    image: maven:3.8.5-openjdk-17-slim
     script: |
       apt-get update
       apt-get -y install curl jq
